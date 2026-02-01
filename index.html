@@ -1739,6 +1739,83 @@
                 opacity: 0;
             }
         }
+
+        /* Mobile Responsive */
+        @media screen and (max-width: 768px) {
+
+            /* 1. Resize khung thư chính */
+            .boxLetter .formLetter {
+                width: 90vw !important;
+                height: 70vh !important;
+                max-height: 800px;
+                padding: 10px;
+                overflow-y: auto;
+            }
+
+            .boxLetter .before {
+                width: 90vw !important;
+                height: 70vh !important;
+                display: none;
+            }
+
+            /* 2. Resize phong bì & thiệp bên ngoài */
+            /* Scale toàn bộ container cha là đủ */
+            .valentines {
+                transform: scale(0.6);
+                transform-origin: center;
+            }
+
+            .envelope {
+                transform: none;
+            }
+
+            .flap {
+                transform: none;
+                /* Reset transform để không bị override mất rotateX khi open */
+            }
+
+            /* Quan trọng: .flap.open phải giữ nguyên rotateX(180deg) 
+               nhưng ta không cần define lại ở đây nếu nó inherit hoặc dùng class riêng, 
+               tuy nhiên để chắc chắn ko bị conflict với rule transform: none ở trên */
+            .flap.open {
+                transform: rotateX(180deg) !important;
+            }
+
+            /* 3. Chỉnh font chữ */
+            .textLetter h2 {
+                font-size: 22px !important;
+                margin-top: 10px;
+            }
+
+            .textLetter .contentLetter {
+                font-size: 15px !important;
+                line-height: 1.4;
+                padding: 0 5px;
+            }
+
+            /* 4. Chỉnh chữ ký */
+            .signed-name {
+                font-size: 16px !important;
+                margin-right: 10px;
+                margin-top: 15px;
+            }
+
+            /* 5. Chỉnh nút đóng */
+            .fa-xmark {
+                font-size: 25px !important;
+                right: 10px;
+                top: 10px;
+            }
+
+            /* 6. Chỉnh lời mời click */
+            .click-invite {
+                font-size: 20px;
+                top: 60%;
+            }
+
+            /* 7. Giấu bớt các icon bay quá nhiều nếu cần */
+            /* .floating-heart { font-size: 15px !important; } */
+        }
     </style>
 
     <script>
